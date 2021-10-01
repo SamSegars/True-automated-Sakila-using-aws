@@ -1,0 +1,11 @@
+#!/bin/bash
+Username="$(whoami)"
+echo "Input Bastion Ip"
+read bip
+echo "Input ec2 Instance Ip"
+read ecip
+echo "What do you want the password to be (MySQL)"
+read password
+chmod 400 /home/$Username/Downloads/labsuser.pem
+ssh-add /home/$Username/Downloads/labsuser.pem
+./'You should use start' $Username $bip $ecip $password
