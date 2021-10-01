@@ -6,8 +6,7 @@ set ip2 [lindex $argv 2]
 set pass [lindex $argv 3]
 
 set timeout 100
-exec chmod 400 /home/$username/Downloads/labsuser.pem
-spawn bash -c ssh-add /home/$username/Downloads/labsuser.pem
+
 spawn ssh  -o StrictHostKeyChecking=no -J ec2-user@$ip1 ec2-user@$ip2
 
 expect "ec2-user@" {
